@@ -1,0 +1,25 @@
+/*header{
+    margin: auto;
+    width:180px;
+}
+
+nav{
+
+    height:50px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:-40px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    border-radius:15px;
+    background-color:whitesmoke;
+}
+
+.NavLink{
+    float:left;
+    text-align:center;
+    background-color:red;
+    width:100%;
+    height:auto;
+}*/

@@ -1,0 +1,11 @@
+/**
+ * Progress bars with centered text
+ */
+
+#pb-label{
+    text-align:center;
+    align:center;
+    margin: 0 auto;
+    margin-bottom:-18px;
+    display:block;
+}

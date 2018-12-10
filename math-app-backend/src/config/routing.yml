@@ -1,0 +1,25 @@
+routes:
+    qadd:
+        path: /qadd
+        controller: QuestionController:add
+        methods: [POST]
+    qget:
+        path: /qget
+        controller: QuestionController:get
+        methods: [POST]
+    qrem:
+        path: /qrem
+        controller: QuestionController:remove
+        methods: [POST]
+    fadd:
+        path: /fadd
+        controller: FormulaController:add
+        methods: [POST]
+    qinit:
+        path: /qinit
+        controller: QuestionController:initPool
+        methods: [POST]
+    fget:
+        path: /fget
+        controller: FormulaController:get
+        methods: [POST]

@@ -1,0 +1,12 @@
+span.formulaBlock{
+    width:100px;
+    height:auto;
+    padding:5px;
+    border-radius:5px;
+    box-shadow: black 0px 0px 1px 1px;
+    margin:5px;
+    display:inline-block;
+    text-align:center;
+    vertical-align: center;
+    cursor:pointer;
+}
