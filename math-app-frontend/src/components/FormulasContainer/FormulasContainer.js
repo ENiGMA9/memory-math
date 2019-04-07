@@ -25,9 +25,9 @@ export default class FormulasContainer extends React.Component {
                 body: JSON.stringify({
                     tag: event.target.value.trim()
                 })
-            }).then((res)=>{
+            }).then((res => 
                 return res.json();
-            }).then((result)=>{
+            }).then((result => 
                 this.setState({receivedFormulas: result});
 
             });
@@ -36,7 +36,7 @@ export default class FormulasContainer extends React.Component {
     };
 
 
-    formulaInsert = (event)=>{
+    formulaInsert = (event => 
         this.props.addMethod(event);
         this.setState({formulas:null,receivedFormulas:null});
         this.listItems=null;

@@ -17,6 +17,6 @@ const FormulaSchema = mongoose.Schema({
 const Formula = module.exports = mongoose.model("Formula", FormulaSchema);
 
 module.exports.get = function(reqTag){
-    return Formula.find({"tag":reqTag}).then((elem)=>{return elem;});
+    return Formula.find({"tag":reqTag}).then((elem => return elem;});
 };
 

@@ -18,11 +18,11 @@ const PoolSchema = mongoose.Schema({
 const Pool = module.exports = mongoose.model("Pool", PoolSchema);
 
 module.exports.getQuestionFromPool = function(index){
-    return Pool.findOne({}).skip(index).then((res)=>{return res;});
+    return Pool.findOne({}).skip(index).then((res => return res;});
 };
 
 module.exports.removeFromPool = function(questionID){
-    return Pool.remove({_id:questionID}).then((res)=>{
+    return Pool.remove({_id:questionID}).then((res => 
         return res;
     });
 };

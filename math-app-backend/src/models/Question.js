@@ -18,7 +18,7 @@ const QuestionSchema = mongoose.Schema({
 const Question = module.exports = mongoose.model("Question", QuestionSchema);
 
 module.exports.getAllQuestions = function(){
-    return Question.find({}).then((f)=>{return f;});
+    return Question.find({}).then((f => return f;});
 };
 
 module.exports.getCount = function(){

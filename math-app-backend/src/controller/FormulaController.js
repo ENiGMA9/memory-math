@@ -17,7 +17,7 @@ class FormulaController {
     }
 
     get(req,res){
-        Formula.get(req.body.tag.trim().toLowerCase()).then((data)=>{res.send(JSON.stringify(data))});
+        Formula.get(req.body.tag.trim().toLowerCase()).then((data => res.send(JSON.stringify(data))});
        }
 
 }
