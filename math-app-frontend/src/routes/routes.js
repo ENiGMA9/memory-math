@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import {
     Route,
     Switch
-} from 'react-router-dom';
+} from "react-router-dom";
 import Home from "../components/Home/Home";
 import AddQuestionComponent from "../components/AddQuestion/AddQuestion"
 import AddFormulaComponent from "../components/AddFormula/AddFormula"

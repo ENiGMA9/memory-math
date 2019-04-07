@@ -1,7 +1,7 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React from "react";
+import {Link} from "react-router-dom";
 import "./Nav.css";
-import {Nav,Navbar,NavItem} from 'react-bootstrap';
+import {Nav,Navbar,NavItem} from "react-bootstrap";
 
 export default class Navigation extends React.Component{
     render(){

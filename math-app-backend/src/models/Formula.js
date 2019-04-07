@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 // Formula Schema
 const FormulaSchema = mongoose.Schema({
@@ -14,9 +14,9 @@ const FormulaSchema = mongoose.Schema({
     }
 });
 
-const Formula = module.exports = mongoose.model('Formula', FormulaSchema);
+const Formula = module.exports = mongoose.model("Formula", FormulaSchema);
 
 module.exports.get = function(reqTag){
-    return Formula.find({'tag':reqTag}).then((elem)=>{return elem;});
+    return Formula.find({"tag":reqTag}).then((elem)=>{return elem;});
 };
 

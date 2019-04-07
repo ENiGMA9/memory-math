@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 // Question Schema
 const QuestionSchema = mongoose.Schema({
@@ -15,7 +15,7 @@ const QuestionSchema = mongoose.Schema({
     }
 });
 
-const Question = module.exports = mongoose.model('Question', QuestionSchema);
+const Question = module.exports = mongoose.model("Question", QuestionSchema);
 
 module.exports.getAllQuestions = function(){
     return Question.find({}).then((f)=>{return f;});

@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const YAML = require("yamljs");
-const path = require('path');
-const cors = require('cors');
-const bodyParser = require('body-parser');
+const path = require("path");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
 
 const PORT = 3001;
@@ -17,7 +17,7 @@ global.lastQuestionID= mongoose.Schema.Types.ObjectId;
 app.use(cors());
 
 // Set Static Folder
-//app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, "public")));
 
 // Body Parser Middleware
 app.use(bodyParser.json());
@@ -25,12 +25,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // Index Route
-app.get('/', (req, res) => {
-    res.send('Heartbeat');
+app.get("/", (req, res) => {
+    res.send("Heartbeat");
 });
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 // routing done right
@@ -44,7 +44,7 @@ for (let route in $routes) {
 }
 
 
-const config = require('./src/config/database');
+const config = require("./src/config/database");
 // initialize database connection
 mongoose.Promise = global.Promise;
 mongoose.connect(config.database)

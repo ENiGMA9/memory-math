@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./App.css";
 import Navigation from "../Nav/Navigation";
 import Routes from "../../routes/routes";

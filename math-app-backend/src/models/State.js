@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 //StateSchema
 const StateSchema = mongoose.Schema({
@@ -16,7 +16,7 @@ const StateSchema = mongoose.Schema({
 });
 
 
-const State = module.exports = mongoose.model('State', StateSchema);
+const State = module.exports = mongoose.model("State", StateSchema);
 
 module.exports.getQuestionFromPool = function(index){
     return Pool.find().skip(index-1);

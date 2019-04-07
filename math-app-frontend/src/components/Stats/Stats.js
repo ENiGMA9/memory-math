@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./Stats.css";
 import {ProgressBar} from "react-bootstrap";
 import {InlineMath} from "react-katex";

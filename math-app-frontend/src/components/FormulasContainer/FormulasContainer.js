@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import "./FormulasContrainer.css";
-import 'katex/dist/katex.min.css';
-import {InlineMath} from 'react-katex';
+import "katex/dist/katex.min.css";
+import {InlineMath} from "react-katex";
 import {Panel} from "react-bootstrap";
 
 export default class FormulasContainer extends React.Component {
@@ -16,11 +16,11 @@ export default class FormulasContainer extends React.Component {
 
     formulaPanelEnter = (event) => {
         if (event.key === "Enter") {
-            fetch('http://localhost:3001/fget', {
-                method: 'POST',
+            fetch("http://localhost:3001/fget", {
+                method: "POST",
                 headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
+                    "Accept": "application/json",
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                     tag: event.target.value.trim()

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import "./AddQuestion.css";
-import {Panel, Grid,Row,Col, Button} from 'react-bootstrap'
+import {Panel, Grid,Row,Col, Button} from "react-bootstrap"
 import FormulasContainer from "../FormulasContainer/FormulasContainer";
 import ClickableFormula from "../ClickableFormula/ClickableFormula";
 
@@ -17,11 +17,11 @@ export default class AddQuestion extends React.Component{
 
 
     sendQuestion = ()=>{
-        return fetch('http://localhost:3001/qadd', {
-            method: 'POST',
+        return fetch("http://localhost:3001/qadd", {
+            method: "POST",
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+                "Accept": "application/json",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 question: this.state.question.trim(),
@@ -55,9 +55,9 @@ export default class AddQuestion extends React.Component{
                     <Col xs={12} md={8}>
             <Panel>
                 <Panel.Heading>
-                <Panel.Title><div contentEditable='true' onInput={this.changeQuestion}>Intrebare</div></Panel.Title>
+                <Panel.Title><div contentEditable="true" onInput={this.changeQuestion}>Intrebare</div></Panel.Title>
                 </Panel.Heading>
-                <Panel.Body><div onInput={this.changeAnswer} id="content" contentEditable='true' ref={this.editableAnswer}>Raspuns</div></Panel.Body>
+                <Panel.Body><div onInput={this.changeAnswer} id="content" contentEditable="true" ref={this.editableAnswer}>Raspuns</div></Panel.Body>
             </Panel>
                         <Button bsStyle="primary" onClick ={this.sendQuestion}>Adauga</Button>
 

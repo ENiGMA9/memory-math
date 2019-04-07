@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./View.css";
 import {Button, Col, Grid, Panel, Row} from "react-bootstrap";
 import Stats from "../Stats/Stats";
@@ -10,27 +10,27 @@ export default class View extends React.Component{
         super(props);
 
         this.state = {
-            question: 'Intrebare',
+            question: "Intrebare",
             step: 0,
             answer: null,
             evalState: true,
             notEvalState: false,
             collapse: false,
             displayEmpty: false,
-            totalQuestions: '0',
-            currentQuestions: '0',
-            statusPercent: '0',
-            statusText: ''
+            totalQuestions: "0",
+            currentQuestions: "0",
+            statusPercent: "0",
+            statusText: ""
         };
         this.next();
     };
 
     next = ()=>{
-        fetch('http://localhost:3001/qget', {
-            method: 'POST',
+        fetch("http://localhost:3001/qget", {
+            method: "POST",
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+                "Accept": "application/json",
+                "Content-Type": "application/json",
             }
         }).then((res)=>{
             return res.json();
@@ -42,14 +42,14 @@ export default class View extends React.Component{
             {
                 this.setState({displayEmpty:true,totalQuestions: result.totalqCount,
                     currentQuestions: result.questionsCount,
-                    statusText: result.totalqCount - result.questionsCount + '/' + result.totalqCount,
+                    statusText: result.totalqCount - result.questionsCount + "/" + result.totalqCount,
                     statusPercent: percentage});
             }else {
 
                 this.setState({
                     totalQuestions: result.totalqCount,
                     currentQuestions: result.questionsCount,
-                    statusText: result.totalqCount - result.questionsCount + '/' + result.totalqCount,
+                    statusText: result.totalqCount - result.questionsCount + "/" + result.totalqCount,
                     statusPercent: percentage,
                     qID: result._id,
                     question: result.question,
@@ -66,11 +66,11 @@ export default class View extends React.Component{
 
 
     remove = ()=>{
-        fetch('http://localhost:3001/qrem', {
-            method: 'POST',
+        fetch("http://localhost:3001/qrem", {
+            method: "POST",
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+                "Accept": "application/json",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 id: this.state.qID
@@ -85,11 +85,11 @@ export default class View extends React.Component{
 
     reinit = ()=>{
         this.setState({displayEmpty:false});
-        fetch('http://localhost:3001/qinit', {
-            method: 'POST',
+        fetch("http://localhost:3001/qinit", {
+            method: "POST",
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+                "Accept": "application/json",
+                "Content-Type": "application/json",
             }
         }).then((res)=>{
             this.next();
@@ -104,20 +104,20 @@ export default class View extends React.Component{
         <Grid >
             <Row  >
                 <Stats text={this.state.statusText} step={this.state.statusPercent} />
-                <Col xs={12} md={8} className={this.state.displayEmpty ? 'hidden' : ''}>
+                <Col xs={12} md={8} className={this.state.displayEmpty ? "hidden" : ""}>
 
                     <Panel>
                         <Panel.Heading>
                             <Panel.Title><div>{this.state.question}</div></Panel.Title>
                         </Panel.Heading>
-                        <Panel.Body><div id="content" contentEditable='true'>Raspuns</div></Panel.Body>
+                        <Panel.Body><div id="content" contentEditable="true">Raspuns</div></Panel.Body>
 
                     </Panel>
 
 
                     <Panel expanded={this.state.collapse}>
                         <Panel.Collapse>
-                        <Panel.Body><div id="raspuns" contentEditable='false'>{this.state.answer}</div></Panel.Body>
+                        <Panel.Body><div id="raspuns" contentEditable="false">{this.state.answer}</div></Panel.Body>
                         </Panel.Collapse>
                     </Panel>
 
@@ -128,11 +128,11 @@ export default class View extends React.Component{
 
                 </Col>
 
-                <Col xs={4} sm={4} className={this.state.displayEmpty ? 'hidden' : ''}>
+                <Col xs={4} sm={4} className={this.state.displayEmpty ? "hidden" : ""}>
                     <FormulasContainer/>
                 </Col>
             </Row>
-            <Button bsStyle="primary" className={!this.state.displayEmpty ? 'hidden' : ''}  onClick = {this.reinit} disabled={!this.state.displayEmpty}>Nu mai sunt intrebari, reinitializeaza</Button>
+            <Button bsStyle="primary" className={!this.state.displayEmpty ? "hidden" : ""}  onClick = {this.reinit} disabled={!this.state.displayEmpty}>Nu mai sunt intrebari, reinitializeaza</Button>
         </Grid>);
     }
 }

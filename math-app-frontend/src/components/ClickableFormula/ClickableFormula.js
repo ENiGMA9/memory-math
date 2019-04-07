@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import "./ClickableFormula.css";
-import 'katex/dist/katex.min.css';
-import {InlineMath} from 'react-katex';
+import "katex/dist/katex.min.css";
+import {InlineMath} from "react-katex";
 import {Panel} from "react-bootstrap";
 
 export default class ClickableFormula extends React.Component {
