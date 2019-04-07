@@ -24,7 +24,7 @@ class QuestionController {
     }
 
     get(req,res){
-        Pool.getCount().then(async (c => 
+        Pool.getCount().then(async (c)=>{
             if(c===0) {
                 res.send(JSON.stringify({empty: true, questionsCount:c,totalqCount:await Question.getCount()}));
                 return;
@@ -54,8 +54,8 @@ class QuestionController {
 
     initPool(req,res){
         Pool.collection.drop();
-        Question.getAllQuestions().then((r => 
-            Pool.insertMany(r).then((a => 
+        Question.getAllQuestions().then((r)=>{
+            Pool.insertMany(r).then((a)=>{
                 res.send(a);
             });
         });
@@ -64,7 +64,7 @@ class QuestionController {
     }
 
     remove(req,res){
-        Pool.removeFromPool(req.body.id).then((a => res.send(a)});
+        Pool.removeFromPool(req.body.id).then((a)=>{res.send(a)});
     }
 
 }

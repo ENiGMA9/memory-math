@@ -23,14 +23,14 @@ module.exports.getQuestionFromPool = function(index){
 };
 
 module.exports.removeFromPool = function(question){
-    Pool.remove(question).then((res => 
+    Pool.remove(question).then((res)=>{
         return res;
     });
 };
 
 module.exports.initializePool = function(items){
     Pool.collection.drop();
-    Pool.insert(items).then((res => 
+    Pool.insert(items).then((res)=>{
         return res;
     });
 };

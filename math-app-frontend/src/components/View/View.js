@@ -25,16 +25,16 @@ export default class View extends React.Component{
         this.next();
     };
 
-    next = ( => 
+    next = ()=>{
         fetch("http://localhost:3001/qget", {
             method: "POST",
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
             }
-        }).then((res => 
+        }).then((res)=>{
             return res.json();
-        }).then((result => 
+        }).then((result)=>{
 
             let percentage = (result.totalqCount - result.questionsCount)/result.totalqCount * 100;
 
@@ -65,7 +65,7 @@ export default class View extends React.Component{
     };
 
 
-    remove = ( => 
+    remove = ()=>{
         fetch("http://localhost:3001/qrem", {
             method: "POST",
             headers: {
@@ -79,11 +79,11 @@ export default class View extends React.Component{
         this.next();
     };
 
-    evaluate = ( => 
+    evaluate = ()=>{
         this.setState({evalState: false, notEvalState:true, collapse:true});
     };
 
-    reinit = ( => 
+    reinit = ()=>{
         this.setState({displayEmpty:false});
         fetch("http://localhost:3001/qinit", {
             method: "POST",
@@ -91,7 +91,7 @@ export default class View extends React.Component{
                 "Accept": "application/json",
                 "Content-Type": "application/json",
             }
-        }).then((res => 
+        }).then((res)=>{
             this.next();
         });
 
